@@ -15,10 +15,23 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Online TV</title>
+
 <!-- HLS -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
+body {
+  margin: 0;
+  background: #111;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== FOOTER ===== */
 .site-footer {
   background: #1c1c1c;
   padding: 30px 15px;
@@ -28,20 +41,21 @@
 .site-footer h2 {
   font-size: 22px;
   margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 0.15em;
 }
 
-/* ===== EFIR GRID ===== */
+/* ===== GRID ===== */
 .live-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
-  margin-bottom: 25px;
 }
 
 /* ===== CARD ===== */
 .live-card {
   background: #000;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   position: relative;
 }
@@ -51,7 +65,7 @@
   position: absolute;
   top: 8px;
   left: 8px;
-  background: #00c853;
+  background: #00e676;
   color: #000;
   font-size: 11px;
   font-weight: 600;
@@ -65,76 +79,61 @@
   top: 8px;
   right: 8px;
   background: #2979ff;
+  color: #fff;
   font-size: 10px;
   padding: 3px 6px;
   border-radius: 4px;
   z-index: 5;
 }
 
-/* LOGO */
-.live-logo {
-  background: #fff;
-  padding: 8px;
-}
-
-.live-logo img {
-  width: 100%;
-  height: 60px;
-  object-fit: contain;
-}
-
 /* VIDEO */
 .live-card video {
   width: 100%;
-  height: 160px;
+  height: 170px;
   background: #000;
+  object-fit: cover;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
 }
 </style>
+</head>
+
+<body>
 
 <footer class="site-footer">
-
   <h2>ONLAYN EFIR</h2>
 
   <div class="live-grid">
 
-    <!-- EFIR 1 -->
     <div class="live-card">
       <span class="live-badge">LIVE</span>
       <span class="hd-badge">HD</span>
-
-    
-
-      <video id="video1" controls ></video>
+      <video id="video1" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
     </div>
 
-    <!-- EFIR 2 -->
     <div class="live-card">
       <span class="live-badge">LIVE</span>
       <span class="hd-badge">HD</span>
-
-    
-
-      <video id="video2" controls muted></video>
+      <video id="video2" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
     </div>
 
-    <!-- EFIR 3 -->
     <div class="live-card">
       <span class="live-badge">LIVE</span>
       <span class="hd-badge">HD</span>
-
-    
-
-      <video id="video3" controls muted></video>
+      <video id="video3" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
     </div>
 
-    <!-- EFIR 4 -->
     <div class="live-card">
       <span class="live-badge">LIVE</span>
       <span class="hd-badge">HD</span>
-
-   
-
-      <video id="video4" controls ></video>
+      <video id="video4" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
     </div>
 
   </div>
@@ -147,16 +146,12 @@ const streams = [
   { id: "video1", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
   { id: "video2", url: "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8" },
   { id: "video3", url: "https://stream8.cinerama.uz/1006/tracks-v1a1/playlist.m3u8" },
-  { id: "video4", url: "https://stream8.cinerama.uz/1018/playlist.m3u8" },
-{ id: "video5", url: "https://stream8.cinerama.uz/1005/tracks-v1a1/playlist.m3u8" },
-{ id: "video6", url: "https://stream8.cinerama.uz/1014/tracks-v1a1/playlist.m3u8" },
-{ id: "video7", url: "https://stream8.cinerama.uz/1217/tracks-v1a1/playlist.m3u8" },
-{ id: "video8", url: "https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8" },
-{ id: "video9", url: "https://stream8.cinerama.uz/1002/tracks-v1a1/playlist.m3u8" }
+  { id: "video4", url: "https://stream8.cinerama.uz/1018/playlist.m3u8" }
 ];
 
 streams.forEach(stream => {
   const video = document.getElementById(stream.id);
+  if (!video) return;
 
   if (Hls.isSupported()) {
     const hls = new Hls();
@@ -167,3 +162,6 @@ streams.forEach(stream => {
   }
 });
 </script>
+
+</body>
+</html>
