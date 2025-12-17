@@ -25,158 +25,129 @@
 
 <style>
 :root {
-  --neon: #00fff0;
-  --pink: #ff2fd6;
-  --bg: #05050a;
+  --neon:#00fff0;
+  --pink:#ff2fd6;
 }
 
-* {
-  box-sizing: border-box;
+body{
+  margin:0;
+  background:radial-gradient(circle at top,#0a0a1a,#000);
+  font-family:Segoe UI,sans-serif;
+  color:#fff;
 }
 
-body {
-  margin: 0;
-  background:
-    radial-gradient(circle at top, #0a0a1a, #000);
-  font-family: "Segoe UI", sans-serif;
-  color: #fff;
+.site-footer{padding:40px 16px}
+.site-footer h2{
+  text-align:center;
+  font-size:24px;
+  letter-spacing:.4em;
+  margin-bottom:30px;
+  color:var(--neon);
+  text-shadow:0 0 20px var(--neon);
 }
 
-/* ===== FUTURE FOOTER ===== */
-.site-footer {
-  padding: 40px 16px;
+.live-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
 }
 
-.site-footer h2 {
-  text-align: center;
-  font-size: 24px;
-  letter-spacing: .4em;
-  margin-bottom: 30px;
-  color: var(--neon);
-  text-shadow: 0 0 20px var(--neon);
+.live-card{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.15);
+  backdrop-filter:blur(18px);
+  box-shadow:0 0 25px rgba(0,255,240,.25);
 }
 
-/* ===== GRID ===== */
-.live-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+.live-badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  font-size:11px;
+  padding:5px 12px;
+  border-radius:20px;
+  background:var(--pink);
+  color:#000;
+  font-weight:700;
+  z-index:9;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 6px var(--pink)}
+  50%{box-shadow:0 0 18px var(--pink)}
+  100%{box-shadow:0 0 6px var(--pink)}
 }
 
-/* ===== CARD ===== */
-.live-card {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-  border: 1px solid rgba(255,255,255,.15);
-  backdrop-filter: blur(18px);
-  box-shadow:
-    0 0 25px rgba(0,255,240,.25);
+.hd-badge{
+  position:absolute;
+  top:10px;
+  right:10px;
+  font-size:10px;
+  padding:4px 8px;
+  border-radius:6px;
+  background:var(--neon);
+  color:#000;
+  font-weight:600;
+  z-index:9;
 }
 
-/* ===== LIVE BADGE ===== */
-.live-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 11px;
-  padding: 5px 12px;
-  border-radius: 20px;
-  background: var(--pink);
-  color: #000;
-  font-weight: 700;
-  z-index: 9;
-  animation: pulse 1.5s infinite;
+.video-overlay{
+  position:absolute;
+  inset:0;
+  z-index:5;
+  cursor:pointer;
+}
+.video-overlay img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.6) saturate(1.2);
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 6px var(--pink); }
-  50% { box-shadow: 0 0 18px var(--pink); }
-  100% { box-shadow: 0 0 6px var(--pink); }
+.play-core{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.play-ring{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  border:2px solid var(--neon);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--neon);
+  font-size:28px;
+  box-shadow:0 0 20px var(--neon), inset 0 0 20px var(--neon);
 }
 
-/* ===== HD ===== */
-.hd-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 10px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  background: var(--neon);
-  color: #000;
-  font-weight: 600;
-  z-index: 9;
+.live-card video{
+  width:100%;
+  height:170px;
+  background:#000;
 }
 
-/* ===== OVERLAY ===== */
-.video-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  cursor: pointer;
+.channel-name{
+  text-align:center;
+  padding:12px;
+  font-size:13px;
+  letter-spacing:.15em;
+  background:linear-gradient(90deg,transparent,rgba(0,255,240,.15),transparent);
+  color:var(--neon);
 }
 
-.video-overlay img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.6) saturate(1.2);
-}
-
-/* PLAY CORE */
-.play-core {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.play-ring {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 2px solid var(--neon);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--neon);
-  font-size: 28px;
-  box-shadow:
-    0 0 20px var(--neon),
-    inset 0 0 20px var(--neon);
-  backdrop-filter: blur(6px);
-}
-
-/* VIDEO */
-.live-card video {
-  width: 100%;
-  height: 170px;
-  background: #000;
-}
-
-/* CHANNEL NAME */
-.channel-name {
-  text-align: center;
-  padding: 12px;
-  font-size: 13px;
-  letter-spacing: .15em;
-  background:
-    linear-gradient(90deg, transparent, rgba(0,255,240,.15), transparent);
-  color: var(--neon);
-}
-
-/* COPYRIGHT */
-.footer-copy {
-  display: block;
-  margin-top: 30px;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: .2em;
-  opacity: .6;
+.footer-copy{
+  margin-top:30px;
+  text-align:center;
+  font-size:11px;
+  letter-spacing:.2em;
+  opacity:.6;
 }
 </style>
 </head>
@@ -184,68 +155,63 @@ body {
 <body>
 
 <footer class="site-footer">
-  <h2>ONLINE&nbsp;TV</h2>
+<h2>NETLIVY&nbsp;TV</h2>
 
-  <div class="live-grid">
+<div class="live-grid" id="grid"></div>
 
-    <!-- EFIR 1 -->
-    <div class="live-card">
-      <span class="live-badge">LIVE</span>
-      <span class="hd-badge">HD</span>
-
-      <div class="video-overlay" onclick="playStream(0)">
-        <img src="https://yandex.com/images/touch/search?lr=10335&text=Zor+tv&img_url=https%3A%2F%2Fcdn4.cdn-telegram.org%2Ffile%2FaxMwuU6C77Z49VD7ZmiP6EmJIlwdrWC0dfi8lAyRa-8tmwa5cs-zyZFzNgLBj46qjKh8lfvRRtD4pTTd5Y2_lhF8M9YYqh_uUbeX7DC0V2-u5f6pYNegm7TvPW7ZHQ7VtSPz66ZeNMGYsDbxWVhJDX7HPnovPZuSnn0aCUJghhZx1bRCBSQCfI6aVMy1mwE7JXph4FLBSLUEv4qD-cqk8eMMlFkhlU8eiQtSAko_bd_vC7LLiou9xTFsnTThMbqyuia7kFNjwznI1A9tb3avoEI-u8P-QNyQYbryAhxnaDiJsgvwN9iyECncMIuOciUhaTgFSmbQyVmcfyEuvGjOxw.jpg&pos=18&rpt=simage">
-        <div class="play-core">
-          <div class="play-ring">▶</div>
-        </div>
-      </div>
-
-      <video id="video0" playsinline></video>
-      <div class="channel-name">ZO'R&nbsp;TV</div>
-    </div>
-
-    <!-- EFIR 2 -->
-    <div class="live-card">
-      <span class="live-badge">LIVE</span>
-      <span class="hd-badge">HD</span>
-
-      <div class="video-overlay" onclick="playStream(1)">
-        <img src="https://i.imgur.com/NuzyhVM.png">
-        <div class="play-core">
-          <div class="play-ring">▶</div>
-        </div>
-      </div>
-
-      <video id="video1" playsinline></video>
-      <div class="channel-name">BIZ&nbsp;TV</div>
-    </div>
-
-  </div>
-
-  <span class="footer-copy">2025 Netlivy®</span>
+<div class="footer-copy">2025 Netlivy®</div>
 </footer>
 
 <script>
-const streams = [
-  "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8",
-  "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8"
+const poster = "https://i.imgur.com/NuzyhVM.png";
+
+const channels = [
+ ["ZO'R TV","https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8"],
+ ["BIZ TV","https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8"],
+ ["SEVIMLI TV","https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8"],
+ ["UZREPORT TV","https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8"],
+ ["YOSHLAR TV","https://stream8.cinerama.uz/1002/tracks-v1a1/playlist.m3u8"],
+ ["RENESANS TV","https://stream8.cinerama.uz/1221/tracks-v1a1/playlist.m3u8"],
+ ["O'ZBEKISTON 24","https://stream8.cinerama.uz/1011/tracks-v1a1/playlist.m3u8"],
+ ["MILLIY TV","https://stream8.cinerama.uz/1014/tracks-v1a1/playlist.m3u8"],
+ ["MADANIYAT VA MA'RIFAT","https://stream8.cinerama.uz/1005/tracks-v1a1/playlist.m3u8"],
+ ["F TV","https://stream8.cinerama.uz/1018/playlist.m3u8"],
+ ["DUNYO BO'YLAB","https://stream8.cinerama.uz/1006/tracks-v1a1/playlist.m3u8"],
+ ["BOLAJON","https://stream8.cinerama.uz/1007/playlist.m3u8"],
+ ["BIZ CINEMA TV","https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8"]
 ];
 
-function playStream(i) {
-  const video = document.getElementById("video" + i);
-  const overlay = video.previousElementSibling;
+const grid=document.getElementById("grid");
 
-  overlay.style.display = "none";
-  video.controls = true;
+channels.forEach((c,i)=>{
+  grid.innerHTML+=`
+  <div class="live-card">
+    <span class="live-badge">LIVE</span>
+    <span class="hd-badge">HD</span>
 
-  if (Hls.isSupported()) {
-    const hls = new Hls();
-    hls.loadSource(streams[i]);
+    <div class="video-overlay" onclick="playStream(${i})">
+      <img src="${poster}">
+      <div class="play-core"><div class="play-ring">▶</div></div>
+    </div>
+
+    <video id="video${i}" playsinline></video>
+    <div class="channel-name">${c[0]}</div>
+  </div>`;
+});
+
+function playStream(i){
+  const video=document.getElementById("video"+i);
+  const overlay=video.previousElementSibling;
+  overlay.style.display="none";
+  video.controls=true;
+
+  if(Hls.isSupported()){
+    const hls=new Hls();
+    hls.loadSource(channels[i][1]);
     hls.attachMedia(video);
   } else {
-    video.src = streams[i];
+    video.src=channels[i][1];
   }
-
   video.play();
 }
 </script>
