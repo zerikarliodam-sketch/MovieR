@@ -19,71 +19,136 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<title>Online TV</title>
+<title>Future Online TV</title>
 
-<!-- HLS -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
-body {
-  margin: 0;
-  background: #111;
-  font-family: Arial, sans-serif;
+:root {
+  --neon: #00fff0;
+  --pink: #ff2fd6;
+  --bg: #05050a;
 }
 
-/* ===== FOOTER ===== */
-.site-footer {
-  background: #1c1c1c;
-  padding: 30px 15px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, #0a0a1a, #000);
+  font-family: "Segoe UI", sans-serif;
   color: #fff;
 }
 
+/* ===== FUTURE FOOTER ===== */
+.site-footer {
+  padding: 40px 16px;
+}
+
 .site-footer h2 {
-  font-size: 22px;
-  margin-bottom: 15px;
   text-align: center;
-  letter-spacing: 0.15em;
+  font-size: 24px;
+  letter-spacing: .4em;
+  margin-bottom: 30px;
+  color: var(--neon);
+  text-shadow: 0 0 20px var(--neon);
 }
 
 /* ===== GRID ===== */
 .live-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 18px;
 }
 
 /* ===== CARD ===== */
 .live-card {
-  background: #000;
-  border-radius: 14px;
-  overflow: hidden;
   position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.15);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 25px rgba(0,255,240,.25);
 }
 
-/* BADGES */
+/* ===== LIVE BADGE ===== */
 .live-badge {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  background: #00e676;
-  color: #000;
+  top: 10px;
+  left: 10px;
   font-size: 11px;
-  font-weight: 600;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 20px;
-  z-index: 5;
+  background: var(--pink);
+  color: #000;
+  font-weight: 700;
+  z-index: 9;
+  animation: pulse 1.5s infinite;
 }
 
+@keyframes pulse {
+  0% { box-shadow: 0 0 6px var(--pink); }
+  50% { box-shadow: 0 0 18px var(--pink); }
+  100% { box-shadow: 0 0 6px var(--pink); }
+}
+
+/* ===== HD ===== */
 .hd-badge {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  background: #2979ff;
-  color: #fff;
+  top: 10px;
+  right: 10px;
   font-size: 10px;
-  padding: 3px 6px;
-  border-radius: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--neon);
+  color: #000;
+  font-weight: 600;
+  z-index: 9;
+}
+
+/* ===== OVERLAY ===== */
+.video-overlay {
+  position: absolute;
+  inset: 0;
   z-index: 5;
+  cursor: pointer;
+}
+
+.video-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.6) saturate(1.2);
+}
+
+/* PLAY CORE */
+.play-core {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-ring {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--neon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon);
+  font-size: 28px;
+  box-shadow:
+    0 0 20px var(--neon),
+    inset 0 0 20px var(--neon);
+  backdrop-filter: blur(6px);
 }
 
 /* VIDEO */
@@ -91,16 +156,27 @@ body {
   width: 100%;
   height: 170px;
   background: #000;
-  object-fit: cover;
+}
+
+/* CHANNEL NAME */
+.channel-name {
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  letter-spacing: .15em;
+  background:
+    linear-gradient(90deg, transparent, rgba(0,255,240,.15), transparent);
+  color: var(--neon);
 }
 
 /* COPYRIGHT */
 .footer-copy {
   display: block;
+  margin-top: 30px;
   text-align: center;
-  margin-top: 20px;
-  font-size: 12px;
-  color: #777;
+  font-size: 11px;
+  letter-spacing: .2em;
+  opacity: .6;
 }
 </style>
 </head>
@@ -108,59 +184,70 @@ body {
 <body>
 
 <footer class="site-footer">
-  <h2>ONLAYN EFIR</h2>
+  <h2>ONLINE&nbsp;TV</h2>
 
   <div class="live-grid">
 
+    <!-- EFIR 1 -->
     <div class="live-card">
       <span class="live-badge">LIVE</span>
       <span class="hd-badge">HD</span>
-      <video id="video1" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
+
+      <div class="video-overlay" onclick="playStream(0)">
+        <img src="https://i.imgur.com/NuzyhVM.png">
+        <div class="play-core">
+          <div class="play-ring">▶</div>
+        </div>
+      </div>
+
+      <video id="video0" playsinline></video>
+      <div class="channel-name">ZO'R&nbsp;TV</div>
     </div>
 
+    <!-- EFIR 2 -->
     <div class="live-card">
       <span class="live-badge">LIVE</span>
       <span class="hd-badge">HD</span>
-      <video id="video2" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
-    </div>
 
-    <div class="live-card">
-      <span class="live-badge">LIVE</span>
-      <span class="hd-badge">HD</span>
-      <video id="video3" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
-    </div>
+      <div class="video-overlay" onclick="playStream(1)">
+        <img src="https://i.imgur.com/NuzyhVM.png">
+        <div class="play-core">
+          <div class="play-ring">▶</div>
+        </div>
+      </div>
 
-    <div class="live-card">
-      <span class="live-badge">LIVE</span>
-      <span class="hd-badge">HD</span>
-      <video id="video4" controls poster="https://i.imgur.com/NuzyhVM.png"></video>
+      <video id="video1" playsinline></video>
+      <div class="channel-name">BIZ&nbsp;TV</div>
     </div>
 
   </div>
 
-  <span class="footer-copy">© 2025 ONLINE TV</span>
+  <span class="footer-copy">2025 Netlivy®</span>
 </footer>
 
 <script>
 const streams = [
-  { id: "video1", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
-  { id: "video2", url: "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8" },
-  { id: "video3", url: "https://stream8.cinerama.uz/1006/tracks-v1a1/playlist.m3u8" },
-  { id: "video4", url: "https://stream8.cinerama.uz/1018/playlist.m3u8" }
+  "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8",
+  "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8"
 ];
 
-streams.forEach(stream => {
-  const video = document.getElementById(stream.id);
-  if (!video) return;
+function playStream(i) {
+  const video = document.getElementById("video" + i);
+  const overlay = video.previousElementSibling;
+
+  overlay.style.display = "none";
+  video.controls = true;
 
   if (Hls.isSupported()) {
     const hls = new Hls();
-    hls.loadSource(stream.url);
+    hls.loadSource(streams[i]);
     hls.attachMedia(video);
-  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = stream.url;
+  } else {
+    video.src = streams[i];
   }
-});
+
+  video.play();
+}
 </script>
 
 </body>
