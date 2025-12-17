@@ -39,8 +39,9 @@ const HeroBanner = () => {
       <div className='wrapper'>
         <div className='heroBannerContent'>
 
-          <span className='title'>Xush Kelibsiz!</span>
-          <span className='subtitle'>Kino ixlosmandlari uchun eng zo'r manzil.Netlivy Tv bu shunchaki ilova emas bu yerda millionlar kinolar biz bilan cheksizlikni his eting."</span>
+          <span className='title'>🎄Xush Kelibsiz!</span>
+          <span className='subtitle'>
+🌌NETLIVY TV — 🚀 kelajakdan uzatilayotgan jonli efirlar, ⚡ tezkor texnologiya, 🎨 futuristik interfeys va 📺 HD sifat bir joyda 🔥✨biz bilan cheksizlikni his eting🎄"</span>
 
           <div className='inputbox'>
             <input type='text' placeholder='Search Movie, Web Series, Tv Shows'
