@@ -39,8 +39,8 @@ const HeroBanner = () => {
       <div className='wrapper'>
         <div className='heroBannerContent'>
 
-          <span className='title'>Welcome</span>
-          <span className='subtitle'>"The ultimate destination for movie lovers. Experience the magic with us."</span>
+          <span className='title'>Xush Kelibsiz!</span>
+          <span className='subtitle'>Kino ixlosmandlari uchun eng zo'r manzil.Netlivy Tv bu shunchaki ilova emas bu yerda millionlar kinolar biz bilan cheksizlikni his eting his eting."</span>
 
           <div className='inputbox'>
             <input type='text' placeholder='Search Movie, Web Series, Tv Shows'
