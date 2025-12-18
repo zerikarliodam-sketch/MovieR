@@ -860,50 +860,15 @@
   body {
     font-family: 'Montserrat', sans-serif;
       
-    backround: radial-gradient(circle at top, #0d1b2a, #000);
-    color: white;
-    min-height: 100vh;
-    overflow-x: hidden;
+   
   }
 
-  header {
-    text-align: center;
-    padding: 30px 10px;
-    font-size: 32px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #3b82f6, #9333ea, #f43f5e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
-  }
+
 
   /* 🎧 AUDIO PLAYER */
 
-  .player:hover {
-    transform: scale(1.03);
-  }
+  
 
-  audio {
-    width: 100%;
-    margin: 10px 0;
-    border-radius: 10px;
-  }
-
-  button {
-    padding: 10px 18px;
-    margin: 6px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    color: white;
-    background: linear-gradient(90deg, #3b82f6, #9333ea);
-    transition: all 0.3s ease;
-  }
- 
-
-  /* 💱 VALYUTA BO‘LIMI */
   
 
   .countries {
@@ -949,23 +914,9 @@
     margin-top: 3px;
   }
 
-  footer {
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
-    opacity: 0.7;
-  }
+  
+  
 
-  .back-btn {
-    display: inline-block;
-    margin-top: 10px;
-    color: #60a5fa;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  .back-btn:hover {
-    color: #a855f7;
-  }
 </style>
 </head>
 <body>
@@ -976,19 +927,11 @@
 
 <div id="countries" class="countries"></div>
 
-<footer>
-  © 2025 Netlivy
-</footer>
 
 <script>
-  const audio = document.getElementById("audio");
-  window.addEventListener("load", () => {
-    audio.play().catch(() => console.log("Autoplay bloklandi."));
-  });
+  
 
-  function pauseAudio() { audio.pause(); }
-  function unmuteAudio() { audio.muted = false; audio.play(); }
-
+  
   const apiKey = "cur_live_hRYlWu85IhyPAw4aAWfvZ6mhHmA1aX8MfaMHm4z8";
 
 const countries = [
