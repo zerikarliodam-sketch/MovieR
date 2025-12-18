@@ -20,7 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netlivy - Медиатека и филм</title>
+    <title>Netlivy - Медиатека </title>
     <style>
         body {
             background-color: black;
@@ -181,6 +181,13 @@
             border-radius: 4px;
             font-weight: bold;
         }
+    /* ===== POPUP ===== */
+.video-popup{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center;z-index:9999}
+.video-popup.active{display:flex}
+.video-box{width:90%;max-width:900px;aspect-ratio:16/9;background:#000;position:relative;border-radius:14px;overflow:hidden}
+.video-box iframe,.video-box video{width:100%;height:100%}
+.close-btn{position:absolute;top:10px;right:14px;background:#ff2c2c;border:none;color:#fff;font-size:12px;padding:6px 10px;border-radius:8px;cursor:pointer;z-index:2}
+
 
         .title {
             margin-top: 10px;
@@ -195,135 +202,122 @@
 </head>
 <body>
 
-    <div class="header">
-        <h2 style="display: flex; align-items: center;">Онлайн ТВ <span class="online-dot"></span></h2>
-        <h2 style="color: #555; cursor: pointer;">Радио</h2>
-    </div>
-
-    <div class="scroll-row">
-        <a href="https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/iMwzRlr.png">
-                <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Sevimli TV</div>
-        </a>
-        <a href="https://stream8.cinerama.uz/1011/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/VRFhKbw.png">
-                <span class="hd-label">HD</span>
-            </div>
+     <div class="header">
+  <h2>Онлайн ТВ <span class="online-dot"></span></h2>
+  <h2 style="color:#555">Радио</h2>
+</div><div class="scroll-row">
+  <div class="channel-link" data-video="https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8">
+    <div class="img-container"><img src="https://i.imgur.com/iMwzRlr.png"><span class="hd-label">HD</span></div>
+    <div class="title">Sevimli TV</div>
+  </div>
+            
+    <div class="channel-link"  data-video="https://stream8.cinerama.uz/1011/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/VRFhKbw.png"><span class="hd-label">HD</span></div>
             <div class="title">O'zbekiston 24</div>
-        </a>
-       <a href="https://stream8.cinerama.uz/1002/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/s4xfUSx.png">
-                <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Yoshlar HD</div>
-        </a>
-       
-      <a href="https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/QdhYRM64/kinoteatr.png">
-               <span class="hd-label">HD</span>  
-            </div>
-            <div class="title">KINOTEATR</div>
-        </a>
-        <a href="https://fl.biztv.media/music_720_QAKpGmVUjaPApCNjpsgBxrdqNihAkl/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.ibb.co/DfsCJwk/Uz-biz-music-5462.jpg">
-                 <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Biz music</div>
-        </a>
-      <a href="https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://biztv.uz/static/media/biz-cinema.286b83dc.png">
-            </div>
-            <div class="title">Biz Cinema</div>
-        </a>
-      <a href="https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://biztv.uz/static/media/logo.5f993187.png">
-            </div>
-            <div class="title">Biz TV</div>
-        </a>
-        <a href="https://stream8.cinerama.uz/1013/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/hGqmCJpv/mahalla.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Mahalla TV HD</div>
-        </a>
-      <a href="https://stream8.cinerama.uz/1206/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/APM2ej5.jpeg">
-            </div>
+</div>
+         <div class="channel-link"  data-video="https://stream8.cinerama.uz/1014/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/v4FBm26.png"><span class="hd-label">HD</span></div>
+            <div class="title">Milliy TV</div>
+</div>
+     
+        <div class="channel-link"  data-video="https://stream8.cinerama.uz/1217/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/Ls5csh2N/my5.png"><span class="hd-label">HD</span></div>
+            <div class="title">MY 5 TV</div>
+</div>
+     
+        <div class="channel-link"  data-video="https://stream8.cinerama.uz/1013/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/hGqmCJpv/mahalla.png"><span class="hd-label">HD</span></div>
+            <div class="title">Mahalla TV</div>
+</div>
+       <div class="channel-link"  data-video="https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8">
+            <div class="img-container"><img src="https://biztv.uz/static/media/biz-cinema.286b83dc.png"><span class="hd-label">HD</span></div>
+            <div class="title">Biz Cinema </div>
+</div>
+     
+       <div class="channel-link"  data-video="https://fl.biztv.media/music_720_QAKpGmVUjaPApCNjpsgBxrdqNihAkl/index.m3u8">
+            <div class="img-container"><img src="https://i.ibb.co/DfsCJwk/Uz-biz-music-5462.jpg"><span class="hd-label">HD</span></div>
+            <div class="title">Biz Music</div>
+</div>
+     
+          <div class="channel-link"  data-video="https://stream8.cinerama.uz/1007/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/s7o0ifu.png"><span class="hd-label">HD</span></div>
+            <div class="title">Bolajon TV</div>
+</div>
+     
+        <div class="channel-link"  data-video="https://stream8.cinerama.uz/1206/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/APM2ej5.jpeg"><span class="hd-label">HD</span></div>
             <div class="title">Dasturxon TV</div>
-        </a>
-      <a href="https://stream8.cinerama.uz/1007/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/s7o0ifu.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Bolajon HD</div>
-        </a>
+</div>
+     
+        <div class="channel-link"  data-video="https://stream8.cinerama.uz/1006/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/KArB5U6.png"><span class="hd-label">HD</span></div>
+            <div class="title">Dunyo Bo'ylab</div>
+</div>
+    <div class="channel-link"  data-video="https://stream8.cinerama.uz/1221/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/cVlcqCX.png"><span class="hd-label">HD</span></div>
+            <div class="title">Renessans TV</div>
+</div>
+    <div class="channel-link"  data-video="https://stream8.cinerama.uz/1003/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/Vkf6D9Wv/toshkent.png"><span class="hd-label">HD</span></div>
+            <div class="title">TOSHKENT</div>
+</div>
+    <div class="channel-link"  data-video="https://stream8.cinerama.uz/1002/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/s4xfUSx.png"><span class="hd-label">HD</span></div>
+            <div class="title">Yoshlar TV</div>
+</div>
+     
     </div>
 
     <div class="row-sep"></div>
 
     <div class="scroll-row">
-        <a href="https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/Bch2RHc.jpg">
-                <span class="hd-label">HD</span>
-            </div>
+         <div class="channel-link"  data-video="https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/NuzyhVM.png"><span class="hd-label">HD</span></div>
+            <div class="title">ZO'R TV</div>
+</div>
+     
+         <div class="channel-link"  data-video="https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/xuhXuSr.jpg"><span class="hd-label">HD</span></div>
             <div class="title">UzReport TV</div>
-        </a>
-       <a href="https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/NuzyhVM.png">
-              <span class="h-label">HD</span>
-            </div>
-            <div class="title">ZO'R TV HD</div>
-        </a>
-        <a href="https://stream8.cinerama.uz/1006/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/KArB5U6.png">
-            <span class="hd-label">HD</span>  
-            </div>
-            <div class="title">Dunyo Bo'ylab HD </div>
-        </a>
-        <a href="https://stream8.cinerama.uz/1217/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/Ls5csh2N/my5.png">
-               <span class="h-label">HD</span> 
-            </div>
-            <div class="title">MY5 TV</div>
-        </a>
-        <a href="https://stream8.cinerama.uz/1018/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/7lpISyN.jpg">
-               <span class="h-label">HD</span> 
-            </div>
+</div>
+     
+          <div class="channel-link"  data-video="https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8">
+            <div class="img-container"><img src="https://biztv.uz/static/media/logo.5f993187.png"><span class="hd-label">HD</span></div>
+            <div class="title">Biz TV</div>
+</div>
+     
+          <div class="channel-link"  data-video="https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/QdhYRM64/kinoteatr.png"><span class="hd-label">HD</span></div>
+            <div class="title">KINOTEATR</div>
+</div>
+     
+          <div class="channel-link"  data-video="https://stream8.cinerama.uz/1018/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/7lpISyN.jpg"><span class="hd-label">HD</span></div>
             <div class="title">F TV</div>
-        </a>
-        <a href="https://stream8.cinerama.uz/1005/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/eeNLXCP.png">
-                <span class="hd-label">HD</span>
-            </div>
+</div>
+     
+          <div class="channel-link"  data-video="https://stream8.cinerama.uz/1005/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/fTLfX0rh/madaniyatvamarifat.png"><span class="hd-label">HD</span></div>
             <div class="title">Madaniyat va Ma'rifat</div>
-        </a>
+</div>
+     
         
-       <a href="https://stream8.cinerama.uz/1014/tracks-v1a1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/v4FBm26.png">
-                <span class="h-label">HD</span>
-            </div>
-            <div class="title">Milliy TV HD</div>
-        </a>
+         <div class="channel-link"  data-video="https://stream8.cinerama.uz/1008/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/SRgLjQyf/navo.png"><span class="hd-label">HD</span></div>
+            <div class="title">NAVO</div>
+</div>
+     <div class="channel-link"  data-video="https://stream8.cinerama.uz/1467/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/G3qrUJh.png"><span class="hd-label">HD</span></div>
+            <div class="title">Qoraqalpog'iston</div>
+</div>
+        <div class="channel-link"  data-video="https://stream8.cinerama.uz/1209/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://stream8.cinerama.uz/1209/tracks-v1a1/playlist.m3u8"><span class="hd-label">HD</span></div>
+            <div class="title">O'zbekiston Tarixi</div>
+</div>
+        <div class="channel-link"  data-video="https://stream8.cinerama.uz/1001/tracks-v1a1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/QUIIhTD.png"><span class="hd-label">HD</span></div>
+            <div class="title">O'ZBEKISTON</div>
+</div>
         
     </div>
     <div class="hr">
@@ -331,423 +325,296 @@
         <h2 style="color: #555; cursor: pointer;">медиатека</h2>
     </div>
     <div class="scroll-row">
-        <a href="https://hls.tv.3angels.ru/stream.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/4fhBbam.png">
-                <span class="hd-label">HD</span>
-            </div>
+        <div class="channel-link"  data-video="https://hls.tv.3angels.ru/stream.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/4fhBbam.png"><span class="hd-label">HD</span></div>
             <div class="title">3ABN Russia</div>
-        </a>
-       <a href="https://cdn-evacoder-tv.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/VTJqdoX.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">360° TV</div>
-        </a>
-        <a href="https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/YXDeX8q.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+     
+      <div class="channel-link"  data-video="https://sitv.ru/hls/s86.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/fyVKKjF0/1hdmusictelevision.png"><span class="hd-label">HD</span></div>
+            <div class="title">86 TV</div>
+</div>
+<div class="channel-link"  data-video="https://cdn-evacoder-tv.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/VTJqdoX.png"><span class="hd-label">HD</span></div>
+            <div class="title">360°</div>
+</div>
+     <div class="channel-link"  data-video="https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/YXDeX8q.png"><span class="hd-label">HD</span></div>
             <div class="title">360° News Russia</div>
-        </a>
-        <a href="http://live2-aisttv.cdnvideo.ru/aisttv2/aisttv.sdp/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/bcw0s4V.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">AIST TV | RUSSIA</div>
-        </a>
+</div>
+     
         
-        <a href="https://stream.almaz-media.tv:8080/hls/576.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/zErXTdF.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Almaznyy HD</div>
-        </a>
-        <a href="http://stv.mediacdn.ru/live/cdn/ani/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/i2AP0hp.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Ani Мултфилм | руссии</div>
-        
-        <a href="https://autopilot.catcast.tv/content/38720/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Logo_Detskiy_Mir_15_January_2013.jpg">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Детский кино</div>
-        </a>
-        <a href="http://dancehits80.denvs.ru:8080/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Logo_Detskiy_Mir_15_January_2013.jpg">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Dancehits80 TV</div>
-        </a>
-        <a href="http://serv25.vintera.tv:8081/test/k16/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/7tNDKHe.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">16 TV </div>
-        </a>
-        <a href="https://streaming.thestream.cyou/live/210.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/RUSX0rX.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">1 TV</div>
-        </a>
-        <a href="https://12channel.bonus-tv.ru/cdn/12channel/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/OA9hm6e.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Канал 12</div>
-        </a>
-        
-        <a href="https://cdn4.skygo.mn/live/disk1/Karusel/HLSv3-FTA/Karusel.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/nUSx1jF.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Мултфилм</div>
-        </a>
-        <a href="http://bst.bratsk.ru/hls/bst2/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/nUSx1jF.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">BST HD</div>
-        </a>
-        <a href="https://streaming.astrakhan.ru/astrakhanrulivehd/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/9WcnjQN.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">АСТРАХАН TV</div>
-        </a>
-        
-        <a href="http://31.148.48.15/Avto_Plus/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/yYp8ShXz/axnscifi.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Auto Plus</div>
-        </a>
-        <a href="https://astrakhan24.bonus-tv.ru/cdn/astrakhan24/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/9WcnjQN.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">АСТРАХАН 24</div>
-        </a>
-        <a href="https://vgtrkregion-reg.cdnvideo.ru/vgtrk/arhangelsk/arktika24-hd/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/kmbdyr6.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">АРКТИКА 24</div>
-        </a>
-        <a href="http://serv25.vintera.tv:8081/test/aris/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/CTFVEAb.png">
- <span class="hd-label">HD</span>
-            </div>
+        <div class="channel-link"  data-video="http://live2-aisttv.cdnvideo.ru/aisttv2/aisttv.sdp/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/bcw0s4V.png"><span class="hd-label">HD</span></div>
+            <div class="title">AIST TV</div>
+</div>
+     
+       <div class="channel-link"  data-video="https://stream.almaz-media.tv:8080/hls/576.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/zErXTdF.png"><span class="hd-label">HD</span></div>
+            <div class="title">Almaznyy</div>
+</div>
+     
+        <div class="channel-link"  data-video="http://stv.mediacdn.ru/live/cdn/ani/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/i2AP0hp.png"><span class="hd-label">HD</span></div>
+            <div class="title">ANI Мултфилм</div>
+</div>
+     
+          <div class="channel-link"  data-video="http://serv25.vintera.tv:8081/test/aris/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/CTFVEAb.png"><span class="hd-label">HD</span></div>
             <div class="title">АРИС 24</div>
-        </a>
+</div>
+     
+          <div class="channel-link"  data-video="https://live.mediacdn.ru/sr1/arhis24/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/blAtdkJ.png"><span class="hd-label">HD</span></div>
+            <div class="title">Arkhyz 24</div>
+</div>
+          <div class="channel-link"  data-video="https://vgtrkregion-reg.cdnvideo.ru/vgtrk/arhangelsk/arktika24-hd/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/kmbdyr6.png"><span class="hd-label">HD</span></div>
+            <div class="title">Arktika 24</div>
+</div>
+         <div class="channel-link"  data-video="https://astrakhan24.bonus-tv.ru/cdn/astrakhan24/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/9WcnjQN.png"><span class="hd-label">HD</span></div>
+            <div class="title">Astrahan TV</div>
+</div>
         
+          <div class="channel-link"  data-video="https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/9WcnjQN.png"><span class="hd-label">HD</span></div>
+            <div class="title">Astrahan Sport</div>
+</div>
+         <div class="channel-link"  data-video="https://live2.mediacdn.ru/sr1/tro/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/vruuPKF.png"><span class="hd-label">HD</span></div>
+            <div class="title">BelRos</div>
+</div>
+          <div class="channel-link"  data-video="http://bst.bratsk.ru/hls/bst2/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/IDotHmQ.png"><span class="hd-label">HD</span></div>
+            <div class="title">БСТ</div>
+</div>
+        
+          <div class="channel-link"  data-video="https://streaming.thestream.cyou/live/210.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/RUSX0rX.png"><span class="hd-label">HD</span></div>
+            <div class="title">Канал 1</div>
+</div>
+         <div class="channel-link"  data-video="https://streaming.televizor-24-tochka.ru/live/28.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/u7jxarn.png"><span class="hd-label">HD</span></div>
+            <div class="title">Crimea 24</div>
+</div>
+          <div class="channel-link"  data-video="https://dagestan.mediacdn.ru/cdn/dagestan/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/jumkRvc.png"><span class="hd-label">HD</span></div>
+            <div class="title">Dog'iston TV</div>
+</div>
+          <div class="channel-link"  data-video="https://autopilot.catcast.tv/content/38720/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/dJqFRhQ.png"><span class="hd-label">HD</span></div>
+            <div class="title">Детское кино ТV</div>
+</div>
+        
+          <div class="channel-link"  data-video="https://streaming.thestream.cyou/live/44.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/gJLyLyTS/domkino.png"><span class="hd-label">HD</span></div>
+            <div class="title">Дом Кино</div>
+</div>
+          
+          <div class="channel-link"  data-video="https://hls-eniseytv.cdnvideo.ru/eniseytv/stream1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/57deE7f.png"><span class="hd-label">HD</span></div>
+            <div class="title">Enisey</div>
+</div>
+             
+          <div class="channel-link"  data-video="https://infochh.trkeurasia.ru/hlsinfoch/infochhd.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/4JUHIVS.png"><span class="hd-label">HD</span></div>
+            <div class="title">Еуро азия</div>
+</div>
+         
+          <div class="channel-link"  data-video="https://cdn4.skygo.mn/live/disk1/Friday/HLSv3-FTA/Friday.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/N2z3EZC.png"><span class="hd-label">HD</span></div>
+            <div class="title">Интернатионал TV</div>
+</div>
+            
+          <div class="channel-link"  data-video="https://video.govoritmoskva.ru/rufm/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/z2mxf3E.png"><span class="hd-label">HD</span></div>
+            <div class="title">Govorit Moskva</div>
+</div>
+         
+          <div class="channel-link"  data-video="http://kino-1.catcast.tv/content/38617/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/zsCPLs4.png"><span class="hd-label">HD</span></div>
+            <div class="title"><Кино 1</div>
+</div>
+                                 <div class="channel-link"  data-video="http://sirius.greenhosting.ru/Kino24Ru/video.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/v1oKNQG.png"><span class="hd-label">HD</span></div>
+            <div class="title">Кино 24</div>
+</div>
+ 
+                       
       
-    </div>
-
+          </div> 
+                            </div>
     
-    </div>
+    
 <div class="hr">
         <h2 style="display: flex; align-items: center;">Телепередачи<span class="team"></span></h2>
         <h2 style="color: #555; font-size: 18px; cursor: pointer;">мир и Азия</h2>
     </div>
     <div class="scroll-row">
-        <a href="https://mediaserver.abnvideos.com/streams/abnsat.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/NTV_%28Turkey%29_logo.svg/300px-NTV_%28Turkey%29_logo.svg.png">
-                <span class="h-label">HD</span>
-            </div>
-            <div class="title">N TV | ABNsat </div>
-        </a>
+          <div class="channel-link"  data-video="https://starmenajo.com/hls/yemenshabab/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/H5Oi2NS.png"><span class="hd-label">HD</span></div>
+            <div class="title">Yemen Shebab</div>
+</div>
        
-      <a href="https://assahat.b-cdn.net/Assahat/assahatobs/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/7YWg92Mg/alhawyah.png">
-               <span class="hd-label">HD</span>  
-            </div>
+        <div class="channel-link"  data-video="https://streamtv.intervenhosting.net:3355/live/fortunatvlive.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/RPiTPnK.png"><span class="hd-label">HD</span></div>
+            <div class="title">Fortuna TV</div>
+</div>
+          <div class="channel-link"  data-video="https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_1/abudhabi_sports_1_hls_nd/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/6BVWk8z.png"><span class="hd-label">HD</span></div>
+            <div class="title">Abu Dhabi Sports </div>
+</div>
+        <div class="channel-link"  data-video="https://mediaserver.abnvideos.com/streams/abnsat.m3u8">
+            <div class="img-container"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/NTV_%28Turkey%29_logo.svg/300px-NTV_%28Turkey%29_logo.svg.png"><span class="hd-label">HD</span></div>
+            <div class="title">N TV | ABNsat</div>
+</div>
+        <div class="channel-link"  data-video="https://assahat.b-cdn.net/Assahat/assahatobs/index.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/7YWg92Mg/alhawyah.png"><span class="hd-label">HD</span></div>
             <div class="title">Al Satah TV | Yaman</div>
-        </a>
-        <a href="https://starmenajo.com/hls/yemenshabab/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/15n480rN/yemeneducation.png">
-                 <span class="h-label">HD</span>
-            </div>
-            <div class="title">Yaman Shabab TV</div>
-        </a>
-      <a href="https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg">
-                <span class="h-label">HD</span>
-            </div>
+</div>
+        <div class="channel-link"  data-video="https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8">
+            <div class="img-container"><img src="https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg"><span class="hd-label">HD</span></div>
             <div class="title">Aguacate TV | Venezuela</div>
-        </a>
-      <a href="https://live.enhdtv.com:8081/8150/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/B4pCVFR.png">
-                <span class="h-label">HD</span>
-            </div>
+</div>
+        <div class="channel-link"  data-video="https://live.enhdtv.com:8081/8150/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/B4pCVFR.png"><span class="hd-label">HD</span></div>
             <div class="title">6 Wise TV | USA</div>
-        </a>
-      <a href="https://d1j2u714xk898n.cloudfront.net/scheduler/scheduleMaster/145.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/iSVnzR1.png">
-                <span class="h-label">HD</span>
-            </div>
-            <div class="title">24/7 Movies | Netlivy</div>
-        </a>
-      <a href="https://30a-tv.com/music.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/gNWg9tl.png">
- <span class="h-label">HD</span>
-            </div>
-            <div class="title">30A MUSIC</div>
-        </a>
+</div>
         
  
         
         
-        <a href="https://cdn-globecast.akamaized.net/live/eds/saudi_tv/hls_roku/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/GRQTndk.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Al saudia</div>
-        </a>
-        <a href="https://d2hng5r56zpsbw.cloudfront.net/out/v1/9c4c990f44bb4767bb46271f326dd574/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/1PIm51D.png">
- <span class="hd-label">HD</span>
-            </div>
+          <div class="channel-link"  data-video="https://d1j2u714xk898n.cloudfront.net/scheduler/scheduleMaster/145.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/iSVnzR1.png"><span class="hd-label">HD</span></div>
+            <div class="title">24/7 Movies | Netlivy</div>
+</div>
+          <div class="channel-link"  data-video="https://30a-tv.com/music.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/gNWg9tl.png"><span class="hd-label">HD</span></div>
+            <div class="title">30A MUSIC</div>
+</div>
+          <div class="channel-link"  data-video="https://d2hng5r56zpsbw.cloudfront.net/out/v1/9c4c990f44bb4767bb46271f326dd574/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/1PIm51D.png"><span class="hd-label">HD</span></div>
             <div class="title">Sauida TV</div>
-        </a>
-        <a href="https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/NVOeM3P.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+          <div class="channel-link"  data-video="https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/NVOeM3P.png"><span class="hd-label">HD</span></div>
             <div class="title">Al Madina</div>
-        </a>
-        <a href="http://htvmada.mada.ps:8888/ajyal/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/i6Y7beR.jpg">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+          <div class="channel-link"  data-video="http://htvmada.mada.ps:8888/ajyal/index.m3u8">
+            <div class="img-container"><img src="tps://i.imgur.com/i6Y7beR.jpg"><span class="hd-label">HD</span></div>
             <div class="title">Ajyal TV | palastine</div>
-        </a>
-        <a href="https://tvcdn01.oktv.kz/tv/mtrk/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/XMyRwDk.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+        
+        
+           <div class="channel-link"  data-video="https://tvcdn01.oktv.kz/tv/mtrk/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/XMyRwDk.png"><span class="hd-label">HD</span></div>
             <div class="title">Kazakh Mtrk</div>
-        </a>
-        
-        
-         <a href="https://30a-tv.com/gh.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://images.axios.com/JiG3RuYBwpU_WZFeU6HHjt03FAU=/111x0:1191x1080/320x320/2023/11/09/1699558891265.jpg">
- <span class="h-label">HD</span>
-            </div>
-            <div class="title">30 TV | USA</div>
-        </a>
+</div>
     </div>
  <div class="row-sep"></div>
 
 <div class="scroll-row">
-        <a href="https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/QM5VpB0x/abc.png">
-                <span class="hd-label">HD</span>
-            </div>
+          <div class="channel-link"  data-video="https://30a-tv.com/gh.m3u8">
+            <div class="img-container"><img src="https://images.axios.com/JiG3RuYBwpU_WZFeU6HHjt03FAU=/111x0:1191x1080/320x320/2023/11/09/1699558891265.jpg"><span class="hd-label">HD</span></div>
+            <div class="title">30 TV | USA</div>
+</div>
+       <div class="channel-link"  data-video="https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/QM5VpB0x/abc.png"><span class="hd-label">HD</span></div>
             <div class="title">ABC news</div>
-        </a>
-     <a href="https://2-fss-2.streamhoster.com/pl_124/206820-4338160-1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/IBcMIcZ.png">
-                <span class="hd-label">HD</span>
-            </div>
+</div>
+       <div class="channel-link"  data-video="https://2-fss-2.streamhoster.com/pl_124/206820-4338160-1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/IBcMIcZ.png"><span class="hd-label">HD</span></div>
             <div class="title">апарт TV</div>
-        </a>
-     <a href="http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5ca525b650be2571e3943c63/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c263253-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=b52c759c-a26c-4e65-828b-14277d6117e0" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/nkEeYfI.png">
-                <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5ca525b650be2571e3943c63/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c263253-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=b52c759c-a26c-4e65-828b-14277d6117e0">
+            <div class="img-container"><img src="https://i.imgur.com/nkEeYfI.png"><span class="hd-label">HD</span></div>
             <div class="title">ENGLISH MOVIES</div>
-        </a>
-    <a href="https://win29.yayin.com.tr/erzurumwebtv/erzurumwebtv/iptvdelisi.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/VLKFTNnF/ertv.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://win29.yayin.com.tr/erzurumwebtv/erzurumwebtv/iptvdelisi.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/VLKFTNnF/ertv.png"><span class="hd-label">HD</span></div>
             <div class="title">Erzurum TV</div>
-        </a>
-    <a href="https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/RFtfZSW2/dreamturk.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/RFtfZSW2/dreamturk.png"><span class="hd-label">HD</span></div>
             <div class="title">Dream Turk</div>
-        </a>
-    <a href="https://live.artidijitalmedya.com/artidijital_diyartv/diyartv/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/qWkHjRA.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://live.artidijitalmedya.com/artidijital_diyartv/diyartv/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/qWkHjRA.png"><span class="hd-label">HD</span></div>
             <div class="title">Diyar TV</div>
-        </a>
-    <a href="https://eustr73.mediatriple.net/videoonlylive/mtikoimxnztxlive/broadcast_5e3bf95a47e07.smil/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/L5hTDK5T/diyanettv.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://eustr73.mediatriple.net/videoonlylive/mtikoimxnztxlive/broadcast_5e3bf95a47e07.smil/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/L5hTDK5T/diyanettv.png"><span class="hd-label">HD</span></div>
             <div class="title">Diyanet TV</div>
-        </a>
-    <a href="https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/cnbc-e-buyuk.png?rkt=DfS6Tgv6Hjr93k3">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8">
+            <div class="img-container"><img src="https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/cnbc-e-buyuk.png?rkt=DfS6Tgv6Hjr93k3"><span class="hd-label">HD</span></div>
             <div class="title">CNBS TV | Turkiya</div>
-        </a>
-    <a href="http://139.162.182.79/live/test/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/U3qlEAp.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="http://139.162.182.79/live/test/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/U3qlEAp.png"><span class="hd-label">HD</span></div>
             <div class="title">Bric TV</div>
-        </a>
-    <a href="https://starmenajo.com/hls/almahriah/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/eryPkrT.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://starmenajo.com/hls/almahriah/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/eryPkrT.png"><span class="hd-label">HD</span></div>
             <div class="title">Almahshian TV</div>
-        </a>
-    <a href="https://akittv-live.ercdn.net/akittv/akittv.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/QMVwP5Rh/akittv.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://akittv-live.ercdn.net/akittv/akittv.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/QMVwP5Rh/akittv.png"><span class="hd-label">HD</span></div>
             <div class="title">Akit TV</div>
-        </a>
-    <a href="https://hls.4utv.live/hls/stream.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/NjBNhT2Z/4utv.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">4U TV | TURKEY</div>
-        </a>
-    <a href="https://freedom.cdn-01.cosmonova.net.ua/mobile-app/main/freedom/master.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/vHnV7HXB/freedom.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://hls.4utv.live/hls/stream.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/NjBNhT2Z/4utv.png"><span class="hd-label">HD</span></div>
+            <div class="title">4U TV | Turkiya</div>
+</div>
+     <div class="channel-link"  data-video="https://freedom.cdn-01.cosmonova.net.ua/mobile-app/main/freedom/master.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/vHnV7HXB/freedom.png"><span class="hd-label">HD</span></div>
             <div class="title">FREEDOM</div>
-        </a>
-    <a href="https://dash4.antik.sk/live/test_espresso/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/xNatV8K.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Espreso TV</div>
-        </a>
-    <a href="https://streamvideol1.luxnet.ua/news24/smil:news24.stream.smil/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/24_Group_Ukraine_04.png/512px-24_Group_Ukraine_04.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">24 | UKRAINE</div>
-        </a>
-    <a href="https://11tv-dp.cdn-04.cosmonova.net.ua/hls/11tv-dp_ua_hi/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/y78saaG.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">11 Kanal | UKRAINE</div>
-        </a>
-    <a href="https://atr-live.cdn-01.cosmonova.net.ua/hls/atr_ua_hi/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/bJntmCgb/atr.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">ATR | UKRAINE</div>
-        </a>
-    <a href="https://cdn-eu-west-prod-ingest-infra-dacast-com.akamaized.net/23cf2e00-28b0-b7b4-2569-ab7d19233fd7/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/VNb4nFxr/aldafrahtv.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Al dafrash TV</div>
-        </a>
-    <a href="https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/85MKQbwQ/alarabiyabusiness.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://dash4.antik.sk/live/test_espresso/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/xNatV8K.png"><span class="hd-label">HD</span></div>
+            <div class="title">Espreso TV </div>
+</div>
+      <div class="channel-link"  data-video="https://streamvideol1.luxnet.ua/news24/smil:news24.stream.smil/playlist.m3u8">
+            <div class="img-container"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/24_Group_Ukraine_04.png/512px-24_Group_Ukraine_04.png"><span class="hd-label">HD</span></div>
+            <div class="title">24 | Ukraine</div>
+</div>
+      <div class="channel-link"  data-video="https://11tv-dp.cdn-04.cosmonova.net.ua/hls/11tv-dp_ua_hi/index.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/y78saaG.png"><span class="hd-label">HD</span></div>
+            <div class="title">11 Kanal</div>
+</div>
+      <div class="channel-link"  data-video="https://atr-live.cdn-01.cosmonova.net.ua/hls/atr_ua_hi/index.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/bJntmCgb/atr.png"><span class="hd-label">HD</span></div>
+            <div class="title">ATR | Ukraine</div>
+</div>
+      <div class="channel-link"  data-video="https://cdn-eu-west-prod-ingest-infra-dacast-com.akamaized.net/23cf2e00-28b0-b7b4-2569-ab7d19233fd7/index.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/VNb4nFxr/aldafrahtv.png"><span class="hd-label">HD</span></div>
+            <div class="title">Al dafrash TV </div>
+</div>
+      <div class="channel-link"  data-video="https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/85MKQbwQ/alarabiyabusiness.png"><span class="hd-label">HD</span></div>
             <div class="title">Al Arabia Bussines</div>
-        </a>
-    <a href="https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/abudhabi_sports_2/abudhabi_sports_2_hls_nd/index.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/1tsRwv8J/abudhabisports2.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Abu Dhabi sports</div>
-        </a>
-    <a href="https://cdn.fastocloud.com/leonel.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/CZ8LKmA.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://cdn.fastocloud.com/leonel.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/CZ8LKmA.png"><span class="hd-label">HD</span></div>
             <div class="title">15 TV | Mexico</div>
-        </a>
-    <a href="https://stream.smashmalta.com:25463/live/webplayer/livestream/47.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/Yg6ZWKu.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+     <div class="channel-link"  data-video="https://stream.smashmalta.com:25463/live/webplayer/livestream/47.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/Yg6ZWKu.png"><span class="hd-label">HD</span></div>
             <div class="title">Smash TV</div>
-        </a>
-    <a href="https://2-fss-1.streamhoster.com/pl_148/201830-1293592-1/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/UPlfzFx.png">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://2-fss-1.streamhoster.com/pl_148/201830-1293592-1/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/UPlfzFx.png"><span class="hd-label">HD</span></div>
             <div class="title">One TV | Malta</div>
-        </a>
-    <a href="https://stream.rtl.lu/data/live/tele/rtltodayradio/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/O1c6wpt.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Today radio | Luxemburg</div>
-        </a>
-    <a href="https://streamer20.multimedia.blue/Eltrona/MamerTV/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/THnWggV.jpg">
- <span class="hd-label">HD</span>
-            </div>
+</div>
+      <div class="channel-link"  data-video="https://stream.rtl.lu/data/live/tele/rtltodayradio/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/O1c6wpt.png"><span class="hd-label">HD</span></div>
+            <div class="title">Today Radio | Luxemburg</div>
+</div>
+      <div class="channel-link"  data-video="https://streamer20.multimedia.blue/Eltrona/MamerTV/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/THnWggV.jpg"><span class="hd-label">HD</span></div>
             <div class="title">Mamer TV</div>
-        </a>
+</div>
     
     </div>
 <div class="hr">
@@ -755,94 +622,111 @@
         <h2 style="color: #555; font-size: 17px;cursor: pointer;">сейчас в мире</h2>
     </div>
     <div class="scroll-row">
-        <a href="https://tvcdn01.oktv.kz/tv/mtrk/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/XMyRwDk.png">
-                <span class="hd-label">HD</span>
-            
-            </div>
-            <div class="title">Kazakh теле удачи</div>
-        </a>
+          <div class="channel-link"  data-video="https://tvcdn01.oktv.kz/tv/mtrk/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/XMyRwDk.png"><span class="hd-label">HD</span></div>
+            <div class="title">Казак телепередачи</div>
+</div>
        
-      <a href="https://fs3.kabelko.sk/9011/index.m3u8?token=btv" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/5CZ6HHn.png">
-               <span class="hd-label">HD</span>  
-            </div>
-            <div class="title">Slovakia BTV</div>
-        </a>
-        <a href="https://panel.host-live.com:19360/cn247tv/cn247tv.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/4hDCB1M.png">
-                 <span class="hd-label">HD</span>
-            </div>
+        <div class="channel-link"  data-video="https://fs3.kabelko.sk/9011/index.m3u8?token=btv">
+            <div class="img-container"><img src="https://i.imgur.com/5CZ6HHn.png"><span class="hd-label">HD</span></div>
+            <div class="title">Slovakiya BTV</div>
+</div>
+          <div class="channel-link"  data-video="https://panel.host-live.com:19360/cn247tv/cn247tv.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/4hDCB1M.png"><span class="hd-label">HD</span></div>
             <div class="title">Argentina C. TV</div>
-        </a>
-      <a href="https://c.mjh.nz/abc-news.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/TwJw4Zzz/abcnews.png">
-                <span class="hd-label">HD</span>
-            </div>
+</div>
+        <div class="channel-link"  data-video="https://c.mjh.nz/abc-news.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/TwJw4Zzz/abcnews.png"><span class="hd-label">HD</span></div>
             <div class="title">ABC NEWS</div>
-        </a>
-      <a href="https://viamotionhsi.netplus.ch/live/eds/atv/browser-HLS8/atv.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/pVDj8SpM/atv2.png">
-                <span class="hd-label">HD</span>
-            </div>
+</div>
+        <div class="channel-link"  data-video="https://viamotionhsi.netplus.ch/live/eds/atv/browser-HLS8/atv.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/pVDj8SpM/atv2.png"><span class="hd-label">HD</span></div>
             <div class="title">ATV2 HD</div>
-        </a>
-      <a href="https://3ea22335.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWdiX1JlZEJ1bGxUVl9ITFM/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/8c78JM28/image.png">
-                <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Red Bull TV HD</div>
-        </a>
-      <a href="https://cdn10-alvinchannel.yayin.com.tr/alvinchannel/alvinchannel/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.imgur.com/m6CM7VU.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Alvin Channel TV</div>
-        </a>
-        <a href="https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8" class="channel-link" target="_blank">
-            <div class="img-container">
-                <img src="https://i.postimg.cc/J4fSgGRk/bahrainquran.png">
- <span class="hd-label">HD</span>
-            </div>
-            <div class="title">Bahrain Sports HD</div>
-        </a>
+</div>
+        <div class="channel-link"  data-video="https://3ea22335.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWdiX1JlZEJ1bGxUVl9ITFM/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/8c78JM28/image.png"><span class="hd-label">HD</span></div>
+            <div class="title">Red Bull TV</div>
+</div>
+        <div class="channel-link"  data-video="https://cdn10-alvinchannel.yayin.com.tr/alvinchannel/alvinchannel/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/m6CM7VU.png"><span class="hd-label">HD</span></div>
+            <div class="title">Alvin TV</div>
+</div>
+          <div class="channel-link"  data-video="https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/J4fSgGRk/bahrainquran.png"><span class="hd-label">HD</span></div>
+            <div class="title">Bahrain Sports</div>
+</div>
    
+        <div class="channel-link"  data-video="">
+            <div class="img-container"><img src=""><span class="hd-label">HD</span></div>
+            <div class="title"></div>
+</div>
+        <div class="channel-link"  data-video="">
+            <div class="img-container"><img src=""><span class="hd-label">HD</span></div>
+            <div class="title"></div>
+</div>
+        <div class="channel-link"  data-video="">
+            <div class="img-container"><img src=""><span class="hd-label">HD</span></div>
+            <div class="title"></div>
+</div>
+        <div class="channel-link"  data-video="https://astrakhan24.bonus-tv.ru/cdn/astrakhan24/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/9WcnjQN.png"><span class="hd-label">HD</span></div>
+            <div class="title">АСТРАХАН 24</div>
+</div>
+        <div class="channel-link"  data-video="http://dancehits80.denvs.ru:8080/index.m3u8">
+            <div class="img-container"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Logo_Detskiy_Mir_15_January_2013.jpg"><span class="hd-label">HD</span></div>
+            <div class="title">Dancehits80 TV</div>
+</div>
+        <div class="channel-link"  data-video="https://cdn4.skygo.mn/live/disk1/Karusel/HLSv3-FTA/Karusel.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/nUSx1jF.png"><span class="hd-label">HD</span></div>
+            <div class="title">Мултфилм</div>
+</div>
         
     </div>
-
+<div class="hr">
+        <h2 style="display: flex; align-items: center;"><span class="onine-dot"></span></h2>
+        <h2 style="color: #555; font-size: 17px;cursor: pointer;">by Netlivy</h2>
     
     </div>
-<div class="hr">
-        <h2 style="display: flex; align-items: center;">Курс в мире<span class="onlie-dot"></span></h2>
-        <h2 style="color: #555; font-size: 21px;cursor: pointer;"></h2>
+    
     </div>
-    <script>
-        // Sichqoncha bilan surish funksiyasi
-        const rows = document.querySelectorAll('.scroll-row');
-        rows.forEach(row => {
-            let isDown = false, startX, scrollLeft;
-            row.addEventListener('mousedown', (e) => {
-                isDown = true;
-                startX = e.pageX - row.offsetLeft;
-                scrollLeft = row.scrollLeft;
-            });
-            row.addEventListener('mouseleave', () => isDown = false);
-            row.addEventListener('mouseup', () => isDown = false);
-            row.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - row.offsetLeft;
-                const walk = (x - startX) * 2;
-                row.scrollLeft = scrollLeft - walk;
-            });
-        });
-    </script>
-</body>
+<!-- POPUP --><div class="video-popup" id="videoPopup">
+  <div class="video-box">
+    <div id="popupTitle" style="position:absolute;top:10px;left:16px;font-size:16px;font-weight:600;z-index:2"></div>
+    <button class="close-btn" onclick="closePopup()">✕</button>
+    <video id="videoPlayer" controls autoplay></video>
+  </div>
+</div><script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script><script>
+const popup=document.getElementById('videoPopup');
+const video=document.getElementById('videoPlayer');
+let hls;
+
+document.querySelectorAll('.channel-link').forEach(ch=>{
+  ch.onclick=()=>openPopup(ch.dataset.video, ch.querySelector('.title').innerText);
+});
+
+function openPopup(url, title){
+  popup.classList.add('active');
+  document.getElementById('popupTitle').innerText = title;
+  if(video.canPlayType('application/vnd.apple.mpegurl')){
+    video.src=url;
+  }else if(Hls.isSupported()){
+    hls=new Hls();
+    hls.loadSource(url);
+    hls.attachMedia(video);
+  }
+}
+
+function closePopup(){
+  document.getElementById('popupTitle').innerText = '';
+  popup.classList.remove('active');
+  video.pause();
+  video.src='';
+  if(hls){hls.destroy();hls=null}
+}
+</script></body>
 </html>
+  
+      
+   
+      
+        
