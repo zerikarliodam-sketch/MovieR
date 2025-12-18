@@ -39,9 +39,12 @@ const HeroBanner = () => {
       <div className='wrapper'>
         <div className='heroBannerContent'>
 
-          <span className='title'>🎄Welcome🎄</span>
+          <span className='title'>🎄WELCOME🎄</span>
           <span className='subtitle'>
-🌌NETLIVY TV — 🚀 kelajakdan uzatilayotgan jonli efirlar, ⚡ tezkor texnologiya, 🎨 futuristik interfeys va 📺 HD sifat bir joyda 🔥✨biz bilan cheksizlikni his eting🎄</span>
+🌌 NETLIVY TV - онлайн медиатека и телепередачи🔥💎 для комфортного просмотра 😎🌙 в любое время и в любом месте
+📱💻📺 на любом устройстве⚡ с высоким качеством HD/Full HD 🌐 стабильный онлайн-доступ без перебоев
+🎥🍿 фильмы • сериалы • прямой эфир • ТВ
+🎄</span>
 
           <div className='inputbox'>
             <input type='text' placeholder='поиск медиатека и телепередачи '
