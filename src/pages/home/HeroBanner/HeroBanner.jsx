@@ -39,12 +39,12 @@ const HeroBanner = () => {
       <div className='wrapper'>
         <div className='heroBannerContent'>
 
-          <span className='title'>🎄Xush Kelibsiz!</span>
+          <span className='title'>🎄Welcome🎄</span>
           <span className='subtitle'>
-🌌NETLIVY TV — 🚀 kelajakdan uzatilayotgan jonli efirlar, ⚡ tezkor texnologiya, 🎨 futuristik interfeys va 📺 HD sifat bir joyda 🔥✨biz bilan cheksizlikni his eting🎄"</span>
+🌌NETLIVY TV — 🚀 kelajakdan uzatilayotgan jonli efirlar, ⚡ tezkor texnologiya, 🎨 futuristik interfeys va 📺 HD sifat bir joyda 🔥✨biz bilan cheksizlikni his eting🎄</span>
 
           <div className='inputbox'>
-            <input type='text' placeholder='Search Movie, Web Series, Tv Shows'
+            <input type='text' placeholder='поиск медиатека и телепередачи '
                   onChange={(e)=>{setQuery(e.target.value)}}
                   onKeyDown={searchQuery}></input>
                   <button onClick={searchQuery}> Search</button>
