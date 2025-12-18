@@ -29,9 +29,9 @@ Netlivy TV — онлайн медиатека и телепередачи дл�
                     <span className="icon fb ">
                         <FaFacebookF />
                     </span>
-                    <a href="instagram.com/car1movvvv className="icon insta">
+                    <span className="icon insta">
                         <FaInstagram />
-                    </a>
+                    </span>
                     <span className="icon twitt">
                         <FaTwitter />
                     </span>
