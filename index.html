@@ -34,6 +34,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            margin-top: 7vh;
             margin-bottom: 25px;
         }
     .hr {
@@ -53,7 +54,7 @@
             margin-left: 8px;
             position: relative;
             /* Pulsatsiya animatsiyasini ulash */
-            animation: pulse-green 1.5s infinite;
+            animation: pulse-green 1s infinite;
         }
      .onlie-dot {
             width: 12px;
@@ -195,7 +196,7 @@
             text-align: center;
         }
 
-        .row-sep { margin-top: 30px; }
+        .row-sep { margin-top: 0px; }
         
         h2 { margin: 0; font-weight: 500; font-size: 24px; }
     </style>
@@ -203,7 +204,7 @@
 <body>
 
      <div class="header">
-  <h2>Онлайн ТВ <span class="online-dot"></span></h2>
+  <h2>| Онлайн ТВ <span class="online-dot"></span></h2>
   <h2 style="color:#555">Радио</h2>
 </div><div class="scroll-row">
   <div class="channel-link" data-video="https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8">
@@ -321,8 +322,8 @@
         
     </div>
     <div class="hr">
-        <h2 style="display: flex; align-items: center;">Pocсии ТВ <span class="online-dot"></span></h2>
-        <h2 style="color: #555; cursor: pointer;">медиатека</h2>
+        <h2 style="display: flex; align-items: center;">| Pocсии ТВ <span class="online-dot"></span></h2>
+        <h2 style="color: #555; cursor: pointer;">~ медиатека</h2>
     </div>
     <div class="scroll-row">
         <div class="channel-link"  data-video="https://hls.tv.3angels.ru/stream.m3u8">
@@ -448,7 +449,7 @@
     
     
 <div class="hr">
-        <h2 style="display: flex; align-items: center;">Телепередачи<span class="team"></span></h2>
+        <h2 style="display: flex; align-items: center;">| Телепередачи<span class="online-dot"></span></h2>
         <h2 style="color: #555; font-size: 18px; cursor: pointer;">мир и Азия</h2>
     </div>
     <div class="scroll-row">
@@ -618,7 +619,7 @@
     
     </div>
 <div class="hr">
-        <h2 style="display: flex; align-items: center;">What's news?<span class="onine-dot"></span></h2>
+        <h2 style="display: flex; align-items: center;">| What's news?<span class="onine-dot"></span></h2>
         <h2 style="color: #555; font-size: 17px;cursor: pointer;">сейчас в мире</h2>
     </div>
     <div class="scroll-row">
@@ -656,18 +657,29 @@
             <div class="title">Bahrain Sports</div>
 </div>
    
-        <div class="channel-link"  data-video="">
-            <div class="img-container"><img src=""><span class="hd-label">HD</span></div>
-            <div class="title"></div>
+        <div class="channel-link"  data-video="https://hls.afintl.com/hls/stream.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/r8MmFRX.png"><span class="hd-label">HD</span></div>
+            <div class="title">AVg'oniston International</div>
+</div>
+        <div class="channel-link"  data-video="https://cdn-globecast.akamaized.net/live/eds/akaal_tv/hls1_smart_akaal/akaal_tv.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/tCtKV93Q/akaalchannel.png"><span class="hd-label">HD</span></div>
+            <div class="title">Akaal</div>
 </div>
         <div class="channel-link"  data-video="">
             <div class="img-container"><img src=""><span class="hd-label">HD</span></div>
             <div class="title"></div>
 </div>
-        <div class="channel-link"  data-video="">
-            <div class="img-container"><img src=""><span class="hd-label">HD</span></div>
-            <div class="title"></div>
+ 
+        <div class="channel-link"  data-video="https://alpha.tv.online.tm/hls/ch006.m3u8">
+            <div class="img-container"><img src="https://i.postimg.cc/KYqN6HtH/asgabat.png"><span class="hd-label">HD</span></div>
+            <div class="title">Ashg'obod TV</div>
 </div>
+        <div class="channel-link"  data-video="https://alpha.tv.online.tm/hls/ch001.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/D7RBtZ2.png"><span class="hd-label">HD</span></div>
+            <div class="title">Alytn TV</div>
+</div>
+        
+        
         <div class="channel-link"  data-video="https://astrakhan24.bonus-tv.ru/cdn/astrakhan24/playlist.m3u8">
             <div class="img-container"><img src="https://i.imgur.com/9WcnjQN.png"><span class="hd-label">HD</span></div>
             <div class="title">АСТРАХАН 24</div>
@@ -683,10 +695,14 @@
         
     </div>
 <div class="hr">
-        <h2 style="display: flex; align-items: center;"><span class="onine-dot"></span></h2>
-        <h2 style="color: #555; font-size: 17px;cursor: pointer;">by Netlivy</h2>
-    
+        <h2 style="display: flex; align-items: center;">| Сентрал азия <span class="onine-dot"></span></h2>
+        <h2 style="color: #555; font-size: 17px;cursor: pointer;">сейчас в мире</h2>
     </div>
+    <div class="scroll-row">
+          <div class="channel-link"  data-video="https://tvcdn01.oktv.kz/tv/mtrk/playlist.m3u8">
+            <div class="img-container"><img src="https://i.imgur.com/XMyRwDk.png"><span class="hd-label">HD</span></div>
+            <div class="title">Казак телепередачи</div>
+</div>
     
     </div>
 <!-- POPUP --><div class="video-popup" id="videoPopup">
