@@ -147,6 +147,7 @@
             font-size: 11px;
             border-radius: 4px;
             font-weight: bold;
+            
         }
     .h-label {
             position: absolute;
@@ -165,6 +166,40 @@
             right: 8px;
         color: white;
             background: #00ff00;
+            padding: 2px 6px;
+            font-size: 11px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    
+    .hd-labe {
+            position: absolute;
+            bottom: 8px;
+            right: 38px;
+            background: red;
+            padding: 2px 6px;
+            font-size: 11px;
+            border-radius: 4px;
+            font-weight: bold;
+            
+        }
+    .h-labe {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        color: white;
+            background: red;
+            padding: 2px 6px;
+            font-size: 11px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    .-labe {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        color: white;
+            background: red;
             padding: 2px 6px;
             font-size: 11px;
             border-radius: 4px;
@@ -196,7 +231,7 @@
   <h2 style="color:#555">Радио</h2>
 </div><div class="scroll-row">
   <div class="channel-link" data-video="https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8">
-    <div class="img-container"><img src="https://i.imgur.com/iMwzRlr.png"><span class="hd-label">HD</span></div>
+    <div class="img-container"><img src="https://i.imgur.com/iMwzRlr.png"><span class="hd-labe">LIVE</span><span class="hd-label">HD</span></div>
     <div class="title">Sevimli TV</div>
   </div>
             
@@ -261,7 +296,7 @@
 
     <div class="scroll-row">
          <div class="channel-link"  data-video="https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8">
-            <div class="img-container"><img src="https://i.imgur.com/NuzyhVM.png"><span class="hd-label">HD</span></div>
+            <div class="img-container"><img src="https://i.imgur.com/NuzyhVM.png"><span class="hd-labe">LIVE</span><span class="hd-label">HD</span></div>
             <div class="title">ZO'R TV</div>
 </div>
      
@@ -315,7 +350,7 @@
     </div>
     <div class="scroll-row">
         <div class="channel-link"  data-video="https://hls.tv.3angels.ru/stream.m3u8">
-            <div class="img-container"><img src="https://i.imgur.com/4fhBbam.png"><span class="hd-label">HD</span></div>
+            <div class="img-container"><img src="https://i.imgur.com/4fhBbam.png"><span class="hd-label">HD</span>  </div>
             <div class="title">3ABN Russia</div>
 </div>
      
@@ -825,7 +860,7 @@ function closePopup(){
 .netlivy-footer {
   background:#000;
   padding:30px 15px;
-  border-top:2px solid #00f7ff;
+  border-top:3px solid #00f7ff;
 }
 
 .netlivy-footer h2{
@@ -918,7 +953,7 @@ function closePopup(){
 }
 
 /* ===== POPUP ===== */
-#livePopup{
+#livePopu{
   display:none;
   position:fixed;
   inset:0;
@@ -926,20 +961,20 @@ function closePopup(){
   z-index:9999;
 }
 
-.popup-box{
+.popup-bo{
   max-width:900px;
-  margin:60px auto;
-  padding:10px;
+  margin:150px auto;
+  padding:5px;
   position:relative;
 }
 
-#liveTitle{
+#liveTitl{
   text-align:center;
   color:#00f7ff;
   margin-bottom:10px;
 }
 
-.close-btn{
+.close-bt{
   position:absolute;
   right:10px;
   top:-40px;
@@ -958,6 +993,20 @@ function closePopup(){
 <footer class="netlivy-footer">
 <h2></h2>
 
+        <div class="tv-item"
+     data-time="00:29"
+     data-tv="Kinoteatr TV"
+     data-stream="https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8">
+  <div class="tv-left">
+    <span class="tv-time">00:30 | Kinoteatr TV</span>
+    <span class="tv-name">Forsaj 5</span>
+  </div>
+  <span class="tv-status"></span>
+</div>
+    
+
+    
+    
 <div class="tv-item"
      data-time="22:20"
      data-tv="Milliy TV"
@@ -968,6 +1017,7 @@ function closePopup(){
   </div>
   <span class="tv-status"></span>
 </div>
+    
 
 <div class="tv-item"
      data-time="21:00"
@@ -990,38 +1040,92 @@ function closePopup(){
   </div>
   <span class="tv-status"></span>
 </div>
+    
+    <div class="tv-item"
+     data-time="00:04"
+     data-tv="Biz TV"
+     data-stream="https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8">
+  <div class="tv-left">
+    <span class="tv-time">00:05 | Biz TV</span>
+    <span class="tv-name">"Firibgar" Kino</span>
+  </div>
+  <span class="tv-status"></span>
+</div>
+    
      <div class="tv-item"
-     data-time="20:00"
+     data-time="04:59"
      data-tv="F TV"
      data-stream="https://stream8.cinerama.uz/1018/playlist.m3u8">
   <div class="tv-left">
-    <span class="tv-time">20:00 | F TV</span>
+    <span class="tv-time">05:00 | F TV</span>
     <span class="tv-name">
 #UZNONSTOP</span>
   </div>
   <span class="tv-status"></span>
 </div>
-    
     <div class="tv-item"
-     data-time="24:00"
-     data-tv="Kinoteatr TV"
-     data-stream="https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8">
+     data-time="8:59"
+     data-tv="Sevimli TV"
+     data-stream="https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8">
   <div class="tv-left">
-    <span class="tv-time">24:00 | Kinoteatr TV</span>
-    <span class="tv-name">Forsaj 5</span>
+    <span class="tv-time">09:00 | Sevimli TV</span>
+    <span class="tv-name">Zamon</span>
   </div>
   <span class="tv-status"></span>
 </div>
+<div class="tv-item"
+     data-time="11:59"
+     data-tv="Sevimli TV"
+     data-stream="https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8">
+  <div class="tv-left">
+    <span class="tv-time">12:00 | Sevimli TV</span>
+    <span class="tv-name">Zamon</span>
+  </div>
+  <span class="tv-status"></span>
+</div>
+<div class="tv-item"
+     data-time="11:59"
+     data-tv="F TV"
+     data-stream="https://stream8.cinerama.uz/1018/playlist.m3u8">
+  <div class="tv-left">
+    <span class="tv-time">12:00 | F TV</span>
+    <span class="tv-name">X FAKTOR</span>
+  </div>
+  <span class="tv-status"></span>
+</div>
+<div class="tv-item"
+     data-time="01:14"
+     data-tv="MY5 TV"
+     data-stream="https://stream8.cinerama.uz/1217/tracks-v1a1/playlist.m3u8">
+  <div class="tv-left">
+    <span class="tv-time">01:15 | MY5 TV</span>
+    <span class="tv-name">BIRINCHI QASOSKOR 2</span>
+  </div>
+  <span class="tv-status"></span>
+</div>
+
+<div class="tv-item"
+     data-time="21:29"
+     data-tv="UzReport TV"
+     data-stream="https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8">
+  <div class="tv-left">
+    <span class="tv-time">21:30 | UzReport TV</span>
+    <span class="tv-name">Hafta Ichida</span>
+  </div>
+  <span class="tv-status"></span>
+</div>
+
     
 
 </footer>
 
 <!-- ===== POPUP PLAYER ===== -->
-<div id="livePopup">
-  <div class="popup-box">
-    <button class="close-btn" onclick="closeLive()">✖ Yopish</button>
-    <h3 id="liveTitle"></h3>
-    <video id="liveVideo" controls autoplay style="width:100%;border-radius:12px;background:black"></video>
+<div id="livePopu">
+  <div class="popup-bo">
+    <button class="close-bt" onclick="closeLive()">✖ Yopish</button>
+    <h3 id="liveTitl"></h3>
+    <video id="liveVide" controls autoplay style="width:100%;border-radius:12px;background:black"></video>
+    
   </div>
 </div>
 
@@ -1037,17 +1141,17 @@ async function getServerTime(){
 }
 
 function openLive(title, stream){
-  document.getElementById('liveTitle').innerText = title;
-  const v = document.getElementById('liveVideo');
+  document.getElementById('liveTitl').innerText = title;
+  const v = document.getElementById('liveVide');
   v.src = stream;
-  document.getElementById('livePopup').style.display = 'block';
+  document.getElementById('livePopu').style.display = 'block';
 }
 
 function closeLive(){
-  const v = document.getElementById('liveVideo');
+  const v = document.getElementById('liveVide');
   v.pause();
   v.src = '';
-  document.getElementById('livePopup').style.display = 'none';
+  document.getElementById('livePopu').style.display = 'none';
 }
 
 async function updateTVStatus(){
@@ -1096,4 +1200,3 @@ setInterval(updateTVStatus, 30000);
 
 </body>
 </html>
-      
