@@ -14,9 +14,6 @@ const Footer = () => {
     return (
         <footer className="footer">
             <ContentWrapper>
-                <div className="infoText">
-                  ОНЛАЙН МЕДИАТЕКА 
-                </div>
                 
                
             </ContentWrapper>
