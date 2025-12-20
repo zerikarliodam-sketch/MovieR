@@ -15,7 +15,7 @@ const Footer = () => {
         <footer className="footer">
             <ContentWrapper>
                 
-                 <h1>Online TV <h1>
+                 
             </ContentWrapper>
         </footer>
     );
