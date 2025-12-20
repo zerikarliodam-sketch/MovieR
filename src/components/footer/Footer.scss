@@ -1,47 +1,30 @@
-// CSS
 @import "../../mixins.scss";
-.footer {
-    
-    
-    .contentWrapper {
-        
+
+.menuItems {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    @include md {
+        margin-bottom: 30px;
+        gap: 30px;
     }
-    .menuItems {
-        list-style-type: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
+
+    .menuItem {
+        transition: all ease 0.3s;
+        cursor: pointer;
+        font-size: 12px;
+        color: white; // Footer olib tashlangani uchun rang qo'shildi
+
         @include md {
-            margin-bottom: 30px;
-            gap: 30px;
+            font-size: 16px;
         }
-        .menuItem {
-            transition: all ease 0.3s;
-            cursor: pointer;
-            font-size: 12px;
-            @include md {
-                font-size: 16px;
-            }
-            &:hover {
-                color: greenyellow;
-            }
+
+        &:hover {
+            color: greenyellow;
         }
-    }
-    
-    
-        @include md {
-            font-size: 14px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            padding : 0 10px;
-            width: 1000px;
-        }
-    }
-   
     }
 }
