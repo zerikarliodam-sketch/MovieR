@@ -253,8 +253,8 @@
 </head>
 <body>
 
-     
-  <div class="scroll-row">
+     <div class="scroll-row">
+  
             
     <div class="channel-link"  data-video="https://stream8.cinerama.uz/1011/tracks-v1a1/playlist.m3u8">
             <div class="img-container"><img src="https://i.imgur.com/VRFhKbw.png"><span class="hd-labe">LIVE</span><span class="hd-label">HD</span></div>
@@ -840,6 +840,7 @@
     <button class="close-btn" onclick="closePopup()">✕</button>
     <video id="videoPlayer" controls autoplay></video>
   </div>
+    
 </div><script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script><script>
 const popup=document.getElementById('videoPopup');
 const video=document.getElementById('videoPlayer');
@@ -1072,21 +1073,31 @@ function closePopup(){
     const netlivyPlayerOverlayContainer = document.getElementById('netlivyUltraPlayerOverlay');
 
     const netlivyEpgDataSource = [
-            { date: "21.12", day: "Hozir", time: "00:30", title: "Real Madrid vs Sevilya", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
-    { date: "21.12", day: "Ertaga", time: "20:05", title: "Vilyareal vs Barselona", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+            { date: "21.12.2025", day: "Hozir", time: "00:30", title: "Real Madrid vs Sevilya", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+    { date: "21.12.2025", day: "Ertaga", time: "20:05", title: "Vilyareal vs Barselona", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
     
-        { date: "21.12", day: "Ertaga", time: "21:20", title: "Talant shov", ch: "Sevimli TV", url: "https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" },
-        { date: "20.12", day: "Ertaga", time: "6:40", title: "Ertalabdan salom", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+        { date: "21.12.2025", day: "Ertaga", time: "21:20", title: "Talant shov", ch: "Sevimli TV", url: "https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" },
+        { date: "20.12.2025", day: "Ertaga", time: "6:40", title: "Ertalabdan salom", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
     
+            { date: "22.12.2025", day: "2 kun...", time: "6:40", title: "Ertalabdan salom", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+    
+    
+                    { date: "22.12.2025", day: "2 kun...", time: "17:00", title: "Artist super mavsum (takror)", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+    
+            { date: "21.12.2025", day: "Bugun", time: "18:15", title: "OMAD SHOU", ch: "MY5 TV", url: "https://stream8.cinerama.uz/1217/tracks-v1a1/playlist.m3u8" },
             
-            { date: "21.12", day: "Ertaga", time: "22:15", title: "Artist", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
-            { date: "21.12", day: "Ertaga", time: "19:00", title: "X FAKTOR", ch: "F TV", url: "" },
-            { date: "21.12", day: "Ertaga", time: "12:10", title: "QVZ - OLIY liga", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
-            { date: "20.12", day: "Ertaga", time: "03:40", title: "Tilim Qursin", ch: "Sevimli TV", url: "https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" },
+    { date: "21.12.2025", day: "Bugun", time: "21:00", title: "No Сomment", ch: "UzReport TV", url: "https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8" },
+    
+            { date: "21.12.2025", day: "Ertaga", time: "22:15", title: "Artist super mavsum", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+            { date: "21.12.2025", day: "Ertaga", time: "19:00", title: "X FAKTOR", ch: "F TV", url: "https://stream8.cinerama.uz/1018/playlist.m3u8" },
+            { date: "21.12.2025", day: "Bugun", time: "19:05", title: "Kim millioner bo‘lmoqchi?", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+            { date: "20.12.2025", day: "Ertaga", time: "03:40", title: "Zamon", ch: "Sevimli TV", url: "https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" },
+                { date: "21.12.2025", day: "Bugun", time: "19:00", title: "Eslab eslab...", ch: "Sevimli TV", url: "https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" },
+                    { date: "21.12.2025", day: "Bugun", time: "22:00", title: "12 SOAT(premyera)", ch: "Renessans TV", url: "https://stream8.cinerama.uz/1221/tracks-v1a1/playlist.m3u8" },
     
 
         { date: "20.12.2025", day: "Kechasi", time: "22:00", title: "#UZNONSTOP", ch: "F TV", url: "https://stream8.cinerama.uz/1018/playlist.m3u8" },
-        { date: "21.12.2025", day: "Kechasi", time: "01:30", title: "Forsaj 6", ch: "Kinoteatr TV", url: "https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8" },
+        { date: "22.12.2025", day: "Kechasi", time: "02:30", title: "Forsaj 7", ch: "Kinoteatr TV", url: "https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8" },
         { date: "20.12.2025", day: "Bugun", time: "22:00", title: "Xorij kinosi: Vatanparvar", ch: "Biz TV", url: "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8" },
         { date: "21.12.2025", day: "Ertaga", time: "04:50", title: "Janob Bin (B/f)", ch: "Kinoteatr TV", url: "https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8" },
         { date: "21.12.2025", day: "Ertaga", time: "00:05", title: "Robin Gud B/f", ch: "O'zbekiston Tarixi", url: "https://stream8.cinerama.uz/1209/tracks-v1a1/playlist.m3u8" }
