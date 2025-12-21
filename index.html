@@ -1078,13 +1078,15 @@ function closePopup(){
     
         { date: "21.12.2025", day: "Ertaga", time: "21:20", title: "Talant shov", ch: "Sevimli TV", url: "https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" },
         { date: "20.12.2025", day: "Ertaga", time: "6:40", title: "Ertalabdan salom", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+    { date: "22.12.2025", day: "Ertaga", time: "02:30", title: "Tilim qursin 2", ch: "Sevimli TV", url: "https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8" },
     
-            { date: "22.12.2025", day: "2 kun...", time: "6:40", title: "Ertalabdan salom", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+            { date: "22.12.2025", day: "Bugun", time: "6:40", title: "Ertalabdan salom", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
     
     
                     { date: "22.12.2025", day: "2 kun...", time: "17:00", title: "Artist super mavsum (takror)", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
+    { date: "22.12.2025", day: "Bugun", time: "23:50", title: "Italiya Super Kubok", ch: "ZO'R TV", url: "https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8" },
     
-            { date: "21.12.2025", day: "Bugun", time: "18:15", title: "OMAD SHOU", ch: "MY5 TV", url: "https://stream8.cinerama.uz/1217/tracks-v1a1/playlist.m3u8" },
+            { date: "22.12.2025", day: "Ertaga", time: "02:00", title: "JOSHUANI IZLAB", ch: "MY5 TV", url: "https://stream8.cinerama.uz/1217/tracks-v1a1/playlist.m3u8" },
             
     { date: "21.12.2025", day: "Bugun", time: "21:00", title: "No Сomment", ch: "UzReport TV", url: "https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8" },
     
@@ -1096,9 +1098,9 @@ function closePopup(){
                     { date: "21.12.2025", day: "Bugun", time: "22:00", title: "12 SOAT(premyera)", ch: "Renessans TV", url: "https://stream8.cinerama.uz/1221/tracks-v1a1/playlist.m3u8" },
     
 
-        { date: "20.12.2025", day: "Kechasi", time: "22:00", title: "#UZNONSTOP", ch: "F TV", url: "https://stream8.cinerama.uz/1018/playlist.m3u8" },
+        { date: "23.12.2025", day: "Kechasi", time: "17:00", title: "#UZNONSTOP", ch: "F TV", url: "https://stream8.cinerama.uz/1018/playlist.m3u8" },
         { date: "22.12.2025", day: "Kechasi", time: "02:30", title: "Forsaj 7", ch: "Kinoteatr TV", url: "https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8" },
-        { date: "20.12.2025", day: "Bugun", time: "22:00", title: "Xorij kinosi: Vatanparvar", ch: "Biz TV", url: "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8" },
+        { date: "22.12.2025", day: "Bugun", time: "02:35", title: "Xorij kinosi: Uylanish", ch: "Biz TV", url: "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8" },
         { date: "21.12.2025", day: "Ertaga", time: "04:50", title: "Janob Bin (B/f)", ch: "Kinoteatr TV", url: "https://stream8.cinerama.uz/1009/tracks-v1a1/playlist.m3u8" },
         { date: "21.12.2025", day: "Ertaga", time: "00:05", title: "Robin Gud B/f", ch: "O'zbekiston Tarixi", url: "https://stream8.cinerama.uz/1209/tracks-v1a1/playlist.m3u8" }
     ];
@@ -1149,7 +1151,7 @@ function closePopup(){
                 const [h, m] = item.time.split(':').map(Number);
                 const netlivyItemStartMinutes = h * 60 + m;
                 // Efir boshlanganidan 2 soat (120 min) o'tgach o'chadi
-                if (netlivyCurrentMinutesInDay > (netlivyItemStartMinutes + 180)) return false; 
+                if (netlivyCurrentMinutesInDay > (netlivyItemStartMinutes + 240)) return false; 
             }
             return true;
         });
