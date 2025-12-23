@@ -78,7 +78,7 @@ const Header = () => {
             <ContentWrapper>
                 <div className="cent"> 
                 <div className="logo" onClick={()=> navigate("/")}>
-             <h1 className="logo">Instagram: @car1movvvv</h1>
+             <h1 className="logo">Netlivy® asoschisi: (Instagram): @car1movvvv</h1>
                 </div>
 
                 <ul className="menuItems">
