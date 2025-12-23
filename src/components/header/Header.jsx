@@ -78,7 +78,7 @@ const Header = () => {
             <ContentWrapper>
                 <div className="cent"> 
                 <div className="logo" onClick={()=> navigate("/")}>
-             <h1 className="logo">Netlivy® asoschisi: (Instagram): @car1movvvv</h1>
+             <h1 className="logo">NETLIVY TV</h1>
                 </div>
 
                 <ul className="menuItems">
@@ -105,7 +105,7 @@ const Header = () => {
             <div className="searchBar">
                 <ContentWrapper>
                     <div className='searchInput'>
-            <input type='text' className="inp" placeholder='Search Movie, Web Series, Tv Shows'
+            <input type='text' className="inp" placeholder='поиск медиатека и телепередачи'
                   onChange={(e)=>{setQuery(e.target.value)}}
                   onKeyDown={searchQuery}/>
 
