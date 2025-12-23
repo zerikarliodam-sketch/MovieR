@@ -78,7 +78,7 @@ const Header = () => {
             <ContentWrapper>
                 <div className="cent"> 
                 <div className="logo" onClick={()=> navigate("/")}>
-             <h1 className="logo">N Movies</h1>
+             <h2 className="logo">Netlivy® asoschisi KARIMOV BEKZOD</h2>
                 </div>
 
                 <ul className="menuItems">
