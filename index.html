@@ -1949,3 +1949,136 @@ function closePopup(){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Haqiqiy Qor Parchalari Animatsiyasi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: black;
+          
+            height: 100vh;
+        }
+
+        #snowCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .hero {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 45%;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            pointer-events: none;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <canvas id="snowCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height, snowflakes = [];
+
+        function updateSize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        window.addEventListener('resize', updateSize);
+        updateSize();
+
+        class Snowflake {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height * -1;
+                this.size = Math.random() * 2 + 1; // Qor parchasining o'lchami
+                this.speed = Math.random() * 0.5 + 0.3;
+                this.opacity = Math.random() * 0.7 + 0.3;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.spin = (Math.random() - 0.5) * 0.07; // Aylanish tezligi
+                this.points = 6; // Qor parchasining 6 ta uchi bo'ladi
+            }
+
+            // Haqiqiy qor parchasi shaklini chizish funksiyasi
+            drawSnowflake(ctx, x, y, radius, points) {
+                ctx.save();
+                ctx.translate(x, y);
+                ctx.rotate(this.rotation);
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.lineWidth = 1.5;
+
+                for (let i = 0; i < points; i++) {
+                    ctx.rotate(Math.PI * 2 / points);
+                    ctx.moveTo(0, 0);
+                    ctx.lineTo(0, -radius);
+                    
+                    // Qor parchasining yon shoxchalari
+                    ctx.moveTo(0, -radius * 0.5);
+                    ctx.lineTo(-radius * 0.3, -radius * 0.8);
+                    ctx.moveTo(0, -radius * 0.5);
+                    ctx.lineTo(radius * 0.3, -radius * 0.8);
+                }
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            update() {
+                this.y += this.speed;
+                this.rotation += this.spin; // Havoda aylanib tushish
+                this.x += Math.sin(this.y / 50) * 0.5; // Yengil shamol tebranishi
+
+                if (this.y > height + 20) {
+                    this.init();
+                    this.y = -20;
+                }
+            }
+
+            draw() {
+                this.drawSnowflake(ctx, this.x, this.y, this.size * 2, this.points);
+            }
+        }
+
+        function createSnow() {
+            snowflakes = [];
+            // Effekt murakkab bo'lgani uchun 100-150 ta yetarli bo'ladi
+            for (let i = 0; i <220; i++) {
+                snowflakes.push(new Snowflake());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            snowflakes.forEach(flake => {
+                flake.update();
+                flake.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        createSnow();
+        animate();
+    </script>
+</body>
+</html>
